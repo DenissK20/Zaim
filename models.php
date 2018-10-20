@@ -1,6 +1,8 @@
 <?php
 require 'vendor/autoload.php';
 
+session_start();
+
 $db = new
 \atk4\data\Persistence_SQL('mysql:dbname=person;host=localhost','root','');
 
@@ -26,16 +28,28 @@ function init() {
   $this->addField('email');
   $this->addField('date', ['type' =>'date']);
   $this->hasOne('person_id', new Person)->addTitle();
+  $this->hasMany('Zaim', new Zaim);
+  $this->hasMany('Vosvrat', new Vosvrat);
 }
 }
 
 
 class Zaim extends \atk4\data\Model {
   public $table = 'zaim';
-function iinit() {
+function init() {
   parent::init();
   $this->addField('money');
   $this->addField('date', ['type' => 'date']);
-  $this->hasOne('friends_id', new Friends($db));
+  $this->hasOne('friends_id', new Friends);
+}
+}
+
+class Vosvrat extends \atk4\data\Model {
+  public $table = 'vosvrat';
+function init() {
+  parent::init();
+  $this->addField('money');
+  $this->addField('date', ['type' => 'date']);
+  $this->hasOne('friends_id', new Friends);
 }
 }

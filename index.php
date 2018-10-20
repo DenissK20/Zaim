@@ -1,5 +1,4 @@
 <?php
-require 'vendor/autoload.php';
 require 'models.php';
 
 $app = new \atk4\ui\App('Взаймы кому?');
@@ -25,12 +24,13 @@ $form->onSubmit(function($form) use ($person) {
   }
 });
 
-$form = $app->layout->add('Form');
-$form->setModel(new Person($db));
 
-$form->onSubmit(function($form) {
-  $form->model->save();
-  return $form->success('Record updated');
+$form1 = $app->layout->add('Form');
+$form1->setModel(new Person($db));
+
+$form1->onSubmit(function($form1) {
+  $form1->model->save();
+  return $form1->success('Record updated');
 });
 
 $form = $app->layout->add('Form');
@@ -40,6 +40,8 @@ $form->onSubmit(function($form) {
   $form->model->save();
   return $form->success('Record updated');
 });
+
+$app->add('CRUD')->setModel(new Friends($db));
 
 $button = $app->add(['Button', 'Admin','blue']);
 $button->link('check.php');
