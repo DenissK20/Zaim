@@ -7,7 +7,7 @@ $db = new
 \atk4\data\Persistence_SQL('mysql:dbname=heroku_33a09646a43f60a;host=eu-cdbr-west-02.cleardb.net','root','');
 
 class Person extends \atk4\data\Model {
-  public $table = 'person';
+  public $table = 'person_denis';
 function init() {
   parent::init();
   $this->addField('login');
@@ -20,7 +20,7 @@ function init() {
 }
 
 class Friends extends \atk4\data\Model {
-  public $table = 'friends';
+  public $table = 'friends_denis';
 function init() {
   parent::init();
   $this->addField('name');
@@ -35,7 +35,7 @@ function init() {
 
 
 class Zaim extends \atk4\data\Model {
-  public $table = 'zaim';
+  public $table = 'zaim_denis';
 function init() {
   parent::init();
   $this->addField('money');
@@ -45,7 +45,7 @@ function init() {
 }
 
 class Vosvrat extends \atk4\data\Model {
-  public $table = 'vosvrat';
+  public $table = 'vosvrat_denis';
 function init() {
   parent::init();
   $this->addField('money');

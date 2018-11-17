@@ -6,7 +6,7 @@ $app = new \atk4\ui\App('Admin');
 $app->initLayout('Centered');
 
 $db = new
-\atk4\data\Persistence_SQL('mysql:dbname=person;host=localhost','root','');
+\atk4\data\Persistence_SQL('mysql:dbname=heroku_33a09646a43f60a;host=eu-cdbr-west-02.cleardb.net','root','');
 
 $crud1 = $app->layout->add('CRUD');
 $crud1->setModel(new Person($db));
