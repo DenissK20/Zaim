@@ -9,7 +9,7 @@ $db = new
 
 $person = new Person($db);
   $form = $app->layout->add('Form');
-$form->setModel(new Person($db));
+$form->setModel(new Person($db),['login','password']);
 $form->buttonSave->set('Sign in');
 $form->onSubmit(function($form) use ($person) {
   $person->tryLoadBy('login',$form->model['login']);
@@ -25,23 +25,6 @@ $form->onSubmit(function($form) use ($person) {
 });
 
 
-$form1 = $app->layout->add('Form');
-$form1->setModel(new Person($db));
-
-$form1->onSubmit(function($form1) {
-  $form1->model->save();
-  return $form1->success('Record updated');
-});
-
-$form = $app->layout->add('Form');
-$form->setModel(new Friends($db));
-
-$form->onSubmit(function($form) {
-  $form->model->save();
-  return $form->success('Record updated');
-});
-
-$app->add('CRUD')->setModel(new Friends($db));
 
 $button = $app->add(['Button', 'Admin','blue']);
 $button->link('check.php');
