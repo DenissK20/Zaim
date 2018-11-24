@@ -3,7 +3,7 @@ require 'vendor/autoload.php';
 
 session_start();
 
-$db = new                               //имя базы               хост                              имя пользователя и пароль
+$db = new                               
 \atk4\data\Persistence_SQL('mysql:dbname=heroku_33a09646a43f60a;host=eu-cdbr-west-02.cleardb.net','b40ba71796d5af','a0bf7181');
 
 class Person extends \atk4\data\Model {
