@@ -3,7 +3,7 @@ require 'vendor/autoload.php';
 
 session_start();
 
-$db = new                               
+$db = new
 \atk4\data\Persistence_SQL('mysql:dbname=heroku_33a09646a43f60a;host=eu-cdbr-west-02.cleardb.net','b40ba71796d5af','a0bf7181');
 
 class Person extends \atk4\data\Model {
@@ -27,7 +27,7 @@ function init() {
   $this->addField('phone_number',['default'=>'+371']);
   $this->addField('email');
   $this->addField('date', ['type' =>'date']);
-  $this->hasOne('person_id', new Person)->addTitle();
+  $this->hasOne('person_denis_id', new Person)->addTitle();
   $this->hasMany('Zaim', new Zaim)->addField('total_zaim', ['aggregate'=>'sum', 'field'=>'money']);
   $this->hasMany('Vosvrat', new Vosvrat)->addField('total_vosvrat', ['aggregate'=>'sum', 'field'=>'money']);
 }
