@@ -1,5 +1,5 @@
 <?php
-require 'models.php';
+//require 'models.php';
 
 $app = new \atk4\ui\App('Взаймы кому?');
 $app->initLayout('Centered');
