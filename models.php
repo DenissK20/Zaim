@@ -44,7 +44,7 @@ function init() {
   parent::init();
   $this->addField('money');
   $this->addField('date', ['type' => 'date']);
-  $this->hasOne('friends_id', new Friends);
+  $this->hasOne('friends_denis_id', new Friends);
 }
 }
 
@@ -54,7 +54,7 @@ function init() {
   parent::init();
   $this->addField('money');
   $this->addField('date', ['type' => 'date']);
-  $this->hasOne('friends_id', new Friends);
+  $this->hasOne('friends_denis_id', new Friends);
 }
 }
 
