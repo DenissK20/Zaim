@@ -3,6 +3,8 @@
 //require 'models.php';
 require 'vendor/autoload.php';
 
+echo $_ENV['CLEARDB_DATABASE_URL'];
+
 $app = new \atk4\ui\App('Взаймы кому?');
 $app->initLayout('Centered');
 
