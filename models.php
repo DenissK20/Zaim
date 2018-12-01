@@ -3,8 +3,14 @@ require 'vendor/autoload.php';
 
 session_start();
 
-$db = new
-\atk4\data\Persistence_SQL('mysql:dbname=heroku_33a09646a43f60a;host=eu-cdbr-west-02.cleardb.net','b40ba71796d5af','a0bf7181');
+//$db = new \atk4\data\Persistence_SQL('mysql:dbname=heroku_33a09646a43f60a;host=eu-cdbr-west-02.cleardb.net','b40ba71796d5af','a0bf7181');
+
+if (isset($_ENV['CLEARDB_DATABASE_URL'])) {
+     $db = \atk4\data\Persistence::connect($_ENV['CLEARDB_DATABASE_URL']);
+ } else {
+     $db = \atk4\data\Persistence::connect('mysql:host=127.0.0.1;dbname=person;charset=utf8', 'root', '');
+ }
+
 
 class Person extends \atk4\data\Model {
   public $table = 'person_denis';
