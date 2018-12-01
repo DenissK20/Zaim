@@ -8,7 +8,9 @@ echo $_ENV['CLEARDB_DATABASE_URL'];
 $app = new \atk4\ui\App('Взаймы кому?');
 $app->initLayout('Centered');
 
+$db = \atk4\data\Persistence::connect($_ENV['CLEARDB_DATABASE_URL']);
 
+var_dump($db);
 
 /*
 $person = new Person($db);
