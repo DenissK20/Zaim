@@ -3,12 +3,12 @@ require 'vendor/autoload.php';
 
 session_start();
 
-if (isset($_ENV['CLEARDB_DATABASE_URL'])) {
+/*if (isset($_ENV['CLEARDB_DATABASE_URL'])) {
      $db = \atk4\data\Persistence::connect($_ENV['CLEARDB_DATABASE_URL']);
  } else {
      $db = \atk4\data\Persistence::connect('mysql:host=127.0.0.1;dbname=person;charset=utf8', 'root', '');
- }
-
+ }*/
+$db = \atk4\data\Persistence::connect('mysql:host=127.0.0.1;dbname=person;charset=utf8', 'root', '');
 
 class Person extends \atk4\data\Model {
   public $table = 'person_denis';
