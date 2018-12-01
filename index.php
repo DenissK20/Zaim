@@ -1,18 +1,14 @@
 <?php
 
-//require 'models.php';
-require 'vendor/autoload.php';
+require 'models.php';
+//require 'vendor/autoload.php';
 
 echo $_ENV['CLEARDB_DATABASE_URL'];
 
 $app = new \atk4\ui\App('Взаймы кому?');
 $app->initLayout('Centered');
 
-$db = \atk4\data\Persistence::connect($_ENV['CLEARDB_DATABASE_URL']);
 
-var_dump($db);
-
-/*
 $person = new Person($db);
   $form = $app->layout->add('Form');
 $form->setModel(new Person($db),['login','password']);
@@ -34,4 +30,3 @@ $form->onSubmit(function($form) use ($person) {
 
 $button = $app->add(['Button', 'Admin','blue']);
 $button->link('check.php');
-*/
