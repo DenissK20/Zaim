@@ -3,14 +3,6 @@
 //require 'models.php';
 require 'vendor/autoload.php';
 
-if (isset($_ENV['CLEARDB_DATABASE_URL'])) {
-     $db = \atk4\data\Persistence::connect($_ENV['CLEARDB_DATABASE_URL']);
- } else {
-     $db = \atk4\data\Persistence::connect('mysql:host=127.0.0.1;dbname=person;charset=utf8', 'root', '');
- }
-
-var_dump($db);
-
 $app = new \atk4\ui\App('Взаймы кому?');
 $app->initLayout('Centered');
 
