@@ -1,6 +1,9 @@
 <?php
+
+echo "Work";
+
 //require 'models.php';
-require 'vendor/autoload.php';
+/*require 'vendor/autoload.php';
 
 if (isset($_ENV['CLEARDB_DATABASE_URL'])) {
      $db = \atk4\data\Persistence::connect($_ENV['CLEARDB_DATABASE_URL']);
@@ -12,6 +15,8 @@ var_dump($db);
 
 $app = new \atk4\ui\App('Взаймы кому?');
 $app->initLayout('Centered');
+
+*/
 
 /*
 $person = new Person($db);
