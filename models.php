@@ -8,7 +8,7 @@ session_start();
  } else {
      $db = \atk4\data\Persistence::connect('mysql:host=127.0.0.1;dbname=person;charset=utf8', 'root', '');
  }*/
-$db = \atk4\data\Persistence::connect('mysql:host=127.0.0.1;dbname=person;charset=utf8', 'root', '');
+$db = \atk4\data\Persistence::connect('mysql:dbname=heroku_33a09646a43f60a;host=eu-cdbr-west-02.cleardb.net', 'b40ba71796d5af', 'a0bf7181');
 
 class Person extends \atk4\data\Model {
   public $table = 'person_denis';
